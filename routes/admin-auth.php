@@ -23,5 +23,5 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
     
-    Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('admin.logout');
+    Route::post('logout', [ LoginController::class, 'destroy'])->name('admin.logout');
 });
